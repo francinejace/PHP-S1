@@ -33,9 +33,9 @@
 <body>
     <h1>Welcome to Simple Bank</h1>
     <ul>
-        <li><a href="balance.php" class="widget-button">View Balance</a></li>
-        <li><a href="deposit.php" class="widget-button">Deposit Money</a></li>
-        <li><a href="withdraw.php" class="widget-button">Withdraw Money</a></li>
+        <li><a href="./features/balance.php" class="widget-button">View Balance</a></li>
+        <li><a href="./features/deposit.php" class="widget-button">Deposit Money</a></li>
+        <li><a href="./features/withdraw.php" class="widget-button">Withdraw Money</a></li>
     </ul>
 </body>
 </html>
