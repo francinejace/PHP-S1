@@ -1,7 +1,12 @@
 <?php
 session_start();
 $error = '';
-if ($_SERVER['REQUEST METHOD'] == 'POST') {
+
+echo '<pre>';
+print_r(array_keys($_SERVER));
+echo '</pre>';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $amount = floatval($_POST['amount']);
     if ($amount > $_SESSION['balance']) {
         $error = 'Insufficient funds.';
@@ -17,9 +22,17 @@ if ($_SERVER['REQUEST METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Withdraw Money</title>
 </head>
 <body>
-    
+    <h1>Withdraw Money</h1>
+    <form method="POST">
+        <label for="amount">Amount:</label>
+        <input type="number" name="amount" step="0.01" required>
+        <button type="submit">Withdraw</button>
+    </form>
+    <?php if ($error): ?>
+        <p style="color: red;"><?= $error ?></p>
+    <?php endif; ?>
 </body>
 </html>
